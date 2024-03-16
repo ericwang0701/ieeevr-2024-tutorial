@@ -1,6 +1,6 @@
 # ieeevr-2024-tutorial
 
-This repo contains the template used for the IEEE VR 2024 Tutorial [Developing Immersive and Collaborative Visualizations with Web-Technologies](https://ieeevr.org/2024/program/tutorials/#T4). This tutorial covers creating immersive and collaborative visualization on the web using [Babylon.js](https://www.babylonjs.com/), [Anu.js](https://jpmorganchase.github.io/anu), and [Colyseus](https://colyseus.io/).
+This repo contains the template used for the IEEE VR 2024 Tutorial [Developing Immersive and Collaborative Visualizations with Web-Technologies](https://ieeevr.org/2024/program/tutorials/#T4). This tutorial covers creating immersive and collaborative visualization on the web using [Babylon.js](https://www.babylonjs.com/), [Anu.js](https://jpmorganchase.github.io/anu), [D3.js](https://d3js.org/) and [Colyseus](https://colyseus.io/).
 
 ## Requirments 
 
@@ -22,6 +22,18 @@ npm run start //starts a local dev server with live code reload
 ```
 
 ## Resources 
+
+- [Babylon Mesh Types](https://doc.babylonjs.com/features/featuresDeepDive/mesh/creation)
+
+- [Babylon JS Mesh Properties](https://doc.babylonjs.com/typedoc/classes/BABYLON.Mesh)
+
+- [Anu Fundamentals](https://jpmorganchase.github.io/anu/guide/first_steps.html)
+
+- [Anu Examples](https://jpmorganchase.github.io/anu/examples/)
+
+- [D3 Scales](https://d3js.org/d3-scale)
+
+- [D3 Data Helpers](https://d3js.org/d3-array)
 
 
 
