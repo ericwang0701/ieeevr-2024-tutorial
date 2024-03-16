@@ -16,9 +16,11 @@ This repo contains the template used for the IEEE VR 2024 Tutorial [Developing I
 2. Naviagte to the repo folder with your terminal and run the following commands
 
 ```
-npm run install //install all node dependencies
+//install all node dependencies
+npm run install 
 
-npm run start //starts a local dev server with live code reload
+//starts a local dev server with live code reload
+npm run start
 ```
 
 ## Resources 
