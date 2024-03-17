@@ -29,6 +29,8 @@ npm run start
 
 - [Babylon JS Mesh Properties](https://doc.babylonjs.com/typedoc/classes/BABYLON.Mesh)
 
+- [Anu Github](https://github.com/jpmorganchase/anu) Give us a star!
+
 - [Anu Fundamentals](https://jpmorganchase.github.io/anu/guide/first_steps.html)
 
 - [Anu Examples](https://jpmorganchase.github.io/anu/examples/)
