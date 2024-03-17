@@ -1,47 +1,47 @@
 import * as anu from '@jpmorganchase/anu' 
 import iris from './data/iris.json' assert {type: 'json'}; 
-import {HemisphericLight, Vector3, Scene, ArcRotateCamera, ActionManager, InterpolateValueAction} from '@babylonjs/core'; 
+import {Vector3, ActionManager, InterpolateValueAction} from '@babylonjs/core'; 
 import {extent, scaleOrdinal, scaleLinear, map,} from "d3";
 
 export const anuVis = function(scene){
+
+  /*
+  Step 1: Create scale functions for our visualization using d3.
+  scaleLinear().domain([data_min, data_max]).range([space_min, space_max]).nice() 
+  or
+  scaleOrdinal() for categorical data
+  scaleBand() for categorical data with spans and gaps (bar charts)
+  and more https://d3js.org/d3-scale
+
+  d3.extent returns [min, max] from a data array use d3.map to return a value from our json like
+  extent(map(data, (d) => {return d.my_data_column}))
+  */
   
-  var scaleX = scaleLinear().domain(extent(map(iris, (d) => {return d.sepalLength}))).range([-1,1]).nice(); 
-  var scaleY = scaleLinear().domain(extent(map(iris, (d) => {return d.petalLength}))).range([-1,1]).nice(); 
-  var scaleZ = scaleLinear().domain(extent(map(iris, (d) => {return d.sepalWidth}))).range([-1,1]).nice(); 
 
-  var scaleC = scaleOrdinal(anu.ordinalChromatic('d310').toStandardMaterial())
+  /*
+  Step 2: create a root node for our visualization
+
+  either create a mesh (anu.create()) and select it (anu.selectName()) or use anu.bind to return a selection
+  */
   
-  let CoT = anu.create("cot", "center", {}, {});
-
-  let chart = anu.selectName('center', scene);
-
-  let spheres = chart.bind('sphere', {diameter: 0.05}, iris) 
-    .positionX((d) => scaleX(d.sepalLength)) 
-    .positionY((d) => scaleY(d.petalLength)) 
-    .positionZ((d) => scaleZ(d.sepalWidth)) 
-    .material((d,m,i) => scaleC(d.species))
-    .action((d,n,i) => new InterpolateValueAction( 
-          ActionManager.OnPointerOverTrigger,
-          n,
-          'scaling',
-          new Vector3(1.2, 1.2, 1.2),
-          100
-      ))
-      .action((d,n,i) => new InterpolateValueAction(
-        ActionManager.OnPointerOutTrigger,
-        n,
-        'scaling',
-        new Vector3(1, 1, 1),
-        100));
-        
-    anu.createAxes('test', scene, {parent: chart, scale: {x: scaleX, y: scaleY, z: scaleZ}});
-
-    chart.positionUI()
-         .scaleUI({minimum: 0.5, maximum: 2})
-         .rotateUI();
 
 
-    CoT.position = new Vector3(0, 2.0, 0.0);
+  /*
+  Step 3: call bind() from our root node to create spheres for each line in our data
+
+  then use our scales to position and color the mesh
+  */
+
+  /*
+  Step 4: Use anu.createAxes() to add and axis to our chart using our scales
+  */
+
+
+  /*
+  Step 5: Add some interactions using actions and anu facet position UI
+  */
+
+  
     return scene;
     
 };

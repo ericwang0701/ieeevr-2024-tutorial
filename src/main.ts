@@ -2,7 +2,7 @@ import * as BABYLON from '@babylonjs/core'
 import "@babylonjs/inspector";
 import { anuVis } from './anuVis';
 import { MultiuserManager } from './MultiuserManager';
-import { anuMultiuserVis } from './anuMultiuserVis';
+import { anuMultiuserVis } from './anuMultiuserVis-completed';
 
 const canvas = document.getElementById('renderCanvas') as HTMLCanvasElement;
 const engine = new BABYLON.Engine(canvas, true);
@@ -37,6 +37,7 @@ engine.runRenderLoop(() => {
 window.addEventListener('resize', () => {
     engine.resize();
 });
+
 
 window.addEventListener("keydown", async (ev) => {
     // Shift+Ctrl+Alt+I
