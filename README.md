@@ -17,7 +17,7 @@ This repo contains the template used for the IEEE VR 2024 Tutorial [Developing I
 
 ```
 //install all node dependencies
-npm run install 
+npm install 
 
 //starts a local dev server with live code reload
 npm run start
